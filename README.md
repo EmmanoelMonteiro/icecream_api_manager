@@ -16,7 +16,7 @@ mvn clean test
 Após executar o comando acima, acessar o endereço e visualizar a execução do projeto:
 
 ```
-http://localhost:8080/api/v1/beers
+http://localhost:8080/api/v1/icecream
 ```
 
 São necessários os seguintes pré-requisitos para a execução do projeto:
