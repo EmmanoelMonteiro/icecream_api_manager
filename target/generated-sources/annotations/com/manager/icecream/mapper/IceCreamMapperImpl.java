@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-08-31T07:48:01-0300",
+    date = "2021-08-31T19:34:20-0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 16.0.1 (AdoptOpenJDK)"
 )
 public class IceCreamMapperImpl implements IceCreamMapper {

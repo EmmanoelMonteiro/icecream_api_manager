@@ -4,7 +4,6 @@ import com.manager.icecream.builder.IceCreamDTOBuilder;
 import com.manager.icecream.dto.IceCreamDTO;
 import com.manager.icecream.dto.QuantityDTO;
 import com.manager.icecream.exception.IceCreamNotFoundException;
-import com.manager.icecream.exception.IceCreamExceededException;
 import com.manager.icecream.service.IceCreamService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +25,6 @@ import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
-import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -57,7 +55,7 @@ public class IceCreamControllerTest {
     }
 
     @Test
-    void whenPOSTIsCalledThenABeerIsCreated() throws Exception {
+    void whenPOSTIsCalledThenAIceCreamIsCreated() throws Exception {
         // given
         IceCreamDTO iceCreamDTO = IceCreamDTOBuilder.builder().build().toIceCreamDTO();
 
@@ -119,7 +117,7 @@ public class IceCreamControllerTest {
     }
 
     @Test
-    void whenGETListWithBeersIsCalledThenOkStatusIsReturned() throws Exception {
+    void whenGETListWithIceCreamIsCalledThenOkStatusIsReturned() throws Exception {
         // given
         IceCreamDTO iceCreamDTO = IceCreamDTOBuilder.builder().build().toIceCreamDTO();
 
@@ -136,7 +134,7 @@ public class IceCreamControllerTest {
     }
 
     @Test
-    void whenGETListWithoutBeersIsCalledThenOkStatusIsReturned() throws Exception {
+    void whenGETListWithoutIceCreamIsCalledThenOkStatusIsReturned() throws Exception {
         // given
         IceCreamDTO iceCreamDTO = IceCreamDTOBuilder.builder().build().toIceCreamDTO();
 
@@ -166,10 +164,10 @@ public class IceCreamControllerTest {
     @Test
     void whenDELETEIsCalledWithInvalidIdThenNotFoundStatusIsReturned() throws Exception {
         //when
-        doThrow(IceCreamNotFoundException.class).when(iceCreamService).deleteById(VALID_ICECREAM_ID);
+        doThrow(IceCreamNotFoundException.class).when(iceCreamService).deleteById(INVALID_ICECREAM_ID);
 
         // then
-        mockMvc.perform(MockMvcRequestBuilders.delete(ICECREAM_API_URL_PATH + "/" + VALID_ICECREAM_ID)
+        mockMvc.perform(MockMvcRequestBuilders.delete(ICECREAM_API_URL_PATH + "/" + INVALID_ICECREAM_ID)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
