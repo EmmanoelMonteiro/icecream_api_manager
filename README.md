@@ -19,11 +19,6 @@ Após executar o comando acima, acessar o endereço e visualizar a execução do
 http://localhost:8080/api/v1/icecream
 ```
 
-São necessários os seguintes pré-requisitos para a execução do projeto:
-
-* Java 14 ou versões superiores.
-* Maven 3.6.3 ou versões superiores.
-
 
 
 
