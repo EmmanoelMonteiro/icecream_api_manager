@@ -2,12 +2,12 @@ package com.manager.icecream.mapper;
 
 import com.manager.icecream.dto.IceCreamDTO;
 import com.manager.icecream.entity.IceCream;
-import javax.annotation.processing.Generated;
+import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-08-31T19:34:20-0300",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 16.0.1 (AdoptOpenJDK)"
+    date = "2021-09-01T20:11:55-0300",
+    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_292 (Private Build)"
 )
 public class IceCreamMapperImpl implements IceCreamMapper {
 
