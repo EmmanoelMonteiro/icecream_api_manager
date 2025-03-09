@@ -1,27 +1,42 @@
-<h2>API REST de gerenciamento de sorvetes com Srping Boot e aplicação de testes unitários com JUnit.</h2>
+# 🍦 Icecream API Manager - Gestão de Sorveterias
 
+Uma API completa para gerenciamento de sorveterias, com autenticação JWT, controle de usuários e CRUD de produtos. Desenvolvida em **Spring Boot** com boas práticas de segurança e documentação Swagger.
 
-Para executar o projeto no terminal, digite o seguinte comando:
+---
 
+## 📥 Como Executar o Projeto
+
+Para executar o projeto no terminal:
 ```shell script
 mvn spring-boot:run 
 ```
 
-Para executar a suíte de testes, basta executar o seguinte comando:
-
+Para executar a suíte de testes:
 ```shell script
 mvn clean test
 ```
 
-Após executar o comando acima, acessar o endereço e visualizar a execução do projeto:
-
+Acessar o endereço e visualizar a execução do projeto:
 ```
 http://localhost:8080/api/v1/icecream
 ```
 
-São necessários os seguintes pré-requisitos para a execução do projeto:
+### Pré-requisitos
+- Java 8+
+- Maven 3.8+
+- PostgreSQL ou H2 (configurável)
 
-* Java 1.8 ou versões superiores.
+## 🚀 Funcionalidades Principais
+
+| Método       | Endpoint               | Descrição                          | Acesso       |
+|--------------|------------------------|------------------------------------|-------------|
+| `POST` 🔑     | `/auth/login`          | Autenticação com JWT               | Público      |
+| `POST` 📝     | `/auth/register`       | Registro de novos usuários         | ADMIN        |
+| `GET` 🗂️      | `/product`             | Listar todos os produtos           | USER/ADMIN   |
+| `POST` 🆕     | `/product`             | Criar novo produto                 | ADMIN        |
+| `PUT` ✏️      | `/product/{id}`        | Atualizar produto                  | ADMIN        |
+| `DELETE` 🗑️  | `/product/{id}`        | Excluir produto                    | ADMIN        |
+
 
 
 
